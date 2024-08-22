@@ -105,15 +105,6 @@ export class ItemDrawerComponent {
     audio.play();
   }
 
-  resetDeck() {
-    this.drawnItem = 'HeatLogo';
-    this.position = '';
-    this.isResettable = false;
-    this.itemName = '';
-    this.itemDescription = '';
-    this.hasFakeBlock = false;
-  }
-
   setPosition(position: string) {
     this.position = position;
     this.isResettable = true;
