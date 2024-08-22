@@ -18,7 +18,7 @@ export class MainMenuComponent implements OnInit {
 
   playSelectSound(character: string) {
     let audio = new Audio();
-    audio.src = `../assets/audio/select/${character}Select.wav`;
+    audio.src = `assets/audio/select/${character}Select.wav`;
     audio.load();
     audio.play();
   }

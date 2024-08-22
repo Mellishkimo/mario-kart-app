@@ -100,7 +100,7 @@ export class ItemDrawerComponent {
 
   playSound() {
     let audio = new Audio();
-    audio.src = `../assets/audio/ouch/${this.character}Ouch.wav`;
+    audio.src = `assets/audio/ouch/${this.character}Ouch.wav`;
     audio.load();
     audio.play();
   }
