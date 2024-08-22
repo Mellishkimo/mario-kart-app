@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="row mt-4">
+    <img src="assets/images/HeatLogo.jpg" />
+  </div>
+  <div class="row">
+    <img src="assets/images/MarioKartEdition.jpg" />
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <img class="w-100" src="assets/images/{{ character }}Portrait.jpg" />
+    </div>
+    <div class="col-6 ps-0">
+      <mat-form-field class="character-select">
+        <mat-select
+          [(value)]="character"
+          (selectionChange)="setCharacter($event.value)"
+          placeholder="Select Character"
+        >
+          <mat-select-trigger>
+            <img
+              src="assets/images/{{ character }}Name.jpg"
+              style="height: 30px"
+            />
+          </mat-select-trigger>
+          <mat-option value="Bowser"
+            ><img src="assets/images/BowserName.jpg" style="height: 30px"
+          /></mat-option>
+          <mat-option value="DK"
+            ><img src="assets/images/DKName.jpg" style="height: 30px"
+          /></mat-option>
+          <mat-option value="Luigi"
+            ><img src="assets/images/LuigiName.jpg" style="height: 30px"
+          /></mat-option>
+          <mat-option value="Mario"
+            ><img src="assets/images/MarioName.jpg" style="height: 30px"
+          /></mat-option>
+          <mat-option value="Peach"
+            ><img src="assets/images/PeachName.jpg" style="height: 30px"
+          /></mat-option>
+          <mat-option value="Toad"
+            ><img src="assets/images/ToadName.jpg" style="height: 30px"
+          /></mat-option>
+          <mat-option value="Wario"
+            ><img src="assets/images/WarioName.jpg" style="height: 30px"
+          /></mat-option>
+          <mat-option value="Yoshi"
+            ><img src="assets/images/YoshiName.jpg" style="height: 30px"
+          /></mat-option>
+        </mat-select>
+      </mat-form-field>
+      <a href="/draw-items"
+        ><img class="w-100 pb-2" src="assets/images/MenuDrawItems.jpg"
+      /></a>
+      <a href="/soundboard"
+        ><div class="w-100">
+          <img
+            src="assets/images/MenuSoundboard.jpg"
+            style="height: 39px"
+          /></div
+      ></a>
+    </div>
+  </div>
+  <div class="row">
+    <a href="/how-to-play">
+      <img class="w-100" src="assets/images/MenuHowToPlay.jpg" />
+    </a>
+  </div>
+</div>

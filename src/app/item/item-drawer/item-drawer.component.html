@@ -1,0 +1,111 @@
+<div class="container">
+  <a href="/"><img src="assets/images/Back.jpg" style="height: 25px" /></a>
+  <div class="row">
+    <img src="assets/images/DrawItems.jpg" />
+  </div>
+
+  <div class="row justify-content-center">
+    <mat-card class="card mb-3" (click)="flipCard()" [@flipState]="flip">
+      <div class="card__face card__face--front">
+        <img
+          *ngIf="drawnItem !== 'HeatLogo' && !drawnItem.includes('Ouch')"
+          class="item-title"
+          src="assets/images/{{ drawnItem }}Title.jpg"
+        />
+        <img
+          *ngIf="drawnItem.includes('Ouch')"
+          class="item-title"
+          src="assets/images/Ouch.jpg"
+        />
+        <img
+          class="item-img"
+          mat-card-image
+          src="assets/images/{{ drawnItem }}.jpg"
+        />
+        <img
+          *ngIf="drawnItem !== 'HeatLogo'"
+          class="item-info-prompt"
+          src="assets/images/TapForDetails.jpg"
+        />
+      </div>
+      <div class="card__face card__face--back">
+        <img
+          *ngIf="drawnItem !== 'HeatLogo' && !drawnItem.includes('Ouch')"
+          class="item-title"
+          src="assets/images/{{ drawnItem }}Title.jpg"
+        />
+        <img
+          *ngIf="drawnItem.includes('Ouch')"
+          class="item-title"
+          src="assets/images/Ouch.jpg"
+        />
+        <p class="item-description mx-1">
+          {{ itemDescription }}
+        </p>
+      </div>
+    </mat-card>
+  </div>
+  <div class="row align-items-baseline justify-content-between">
+    <mat-form-field class="position-select">
+      <mat-select
+        [(value)]="position"
+        (selectionChange)="setPosition($event.value)"
+      >
+        <mat-select-trigger>
+          <img src="assets/images/{{ position }}.jpg" style="height: 30px" />
+        </mat-select-trigger>
+        <mat-option value="Position"></mat-option>
+        <mat-option value="first"
+          ><img src="assets/images/first.jpg" style="height: 30px"
+        /></mat-option>
+        <mat-option value="second"
+          ><img src="assets/images/second.jpg" style="height: 30px"
+        /></mat-option>
+        <mat-option value="third"
+          ><img src="assets/images/third.jpg" style="height: 30px"
+        /></mat-option>
+        <mat-option value="fourth"
+          ><img src="assets/images/fourth.jpg" style="height: 30px"
+        /></mat-option>
+        <mat-option value="fifth"
+          ><img src="assets/images/fifth.jpg" style="height: 30px"
+        /></mat-option>
+        <mat-option value="sixth"
+          ><img src="assets/images/sixth.jpg" style="height: 30px"
+        /></mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-checkbox
+      class="fake-block-checkbox"
+      [checked]="hasFakeBlock"
+      (change)="toggleFakeBlock()"
+      labelPosition="before"
+      style="padding-left: 5px"
+      ><img
+        src="assets/images/FakeBlockCheck.jpg"
+        style="height: 35px; margin-right: -10px"
+    /></mat-checkbox>
+  </div>
+  <div class="row justify-content-center">
+    <div class="row justify-content-between">
+      <button
+        class="draw-btn"
+        color="red"
+        mat-raised-button
+        [disabled]="position === 'Position'"
+        (click)="drawItem(position)"
+      >
+        <img class="w-100" src="assets/images/DrawItem.jpg" />
+      </button>
+
+      <button
+        mat-raised-button
+        [disabled]="!isResettable"
+        (click)="resetDeck()"
+      >
+        <img class="w-100" src="assets/images/Reset.jpg" style="height: 28px" />
+      </button>
+    </div>
+  </div>
+</div>
