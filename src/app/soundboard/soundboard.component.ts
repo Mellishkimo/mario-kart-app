@@ -10,14 +10,14 @@ export class SoundboardComponent {
 
   playBoost() {
     const audio = new Audio();
-    audio.src = `assets/audio/boost/${this.character}Boost.wav`;
+    audio.src = `/assets/audio/boost/${this.character}Boost.wav`;
     audio.load();
     audio.play();
   }
 
   playFireItem() {
     const audio = new Audio();
-    audio.src = `assets/audio/fire-item/${this.character}FireItem.wav`;
+    audio.src = `mario-kart-app/assets/audio/fire-item/${this.character}FireItem.wav`;
     audio.load();
     audio.play();
   }
