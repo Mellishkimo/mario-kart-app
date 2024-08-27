@@ -65,7 +65,7 @@ export const itemDescriptionList = [
   {
     name: 'Lightning Cloud',
     description:
-      'During Step 5 you may play one card from your hand as if it were a Gas Pedal. If you slipstream an opponent, they gain control of the Lightning Cloud. After 3 turns of Lightning Cloud being active, it zaps its controller and forces them down to first gear (they cannot shift up) for one turn.',
+      'During Step 5 you may play one card from hand as if it were a Gas Pedal. If you slipstream an opponent, they gain control of the Lightning Cloud. After 3 turns of Cloud being active, it zaps its controller and forces them down to first gear (they cannot shift up) for one turn.',
   },
   {
     name: 'Star',
