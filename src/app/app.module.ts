@@ -6,10 +6,10 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ItemModule } from './item/item.module';
 import { MainMenuModule } from './main-menu/main-menu.module';
-import { SoundboardComponent } from './soundboard/soundboard.component';
+import { HowToPlayComponent } from './how-to-play/how-to-play.component';
 
 @NgModule({
-  declarations: [AppComponent, SoundboardComponent],
+  declarations: [AppComponent, HowToPlayComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -36,11 +36,10 @@ export class ItemDrawerComponent {
   itemDescriptionList = itemDescriptionList;
   probabilityList = probabilityList;
   character = localStorage.getItem('character');
-  drawnItem: string = 'HeatLogo';
-  itemDescription: string = '';
+  drawnItem: string = localStorage.getItem('drawnItem') || 'HeatLogo';
+  itemDescription: string = localStorage.getItem('itemDescription') || '';
   itemName: string = '';
-  position: string = 'Position';
-  isResettable = false;
+  position: string = localStorage.getItem('position') || 'Position';
   hasFakeBlock = false;
   flip: string = 'inactive';
 
@@ -49,9 +48,10 @@ export class ItemDrawerComponent {
     if (this.hasFakeBlock) {
       let dangerValue = Math.round(Math.random() * 5);
       if (dangerValue === 1) {
-        this.playSound();
+        this.playAudio('Ouch');
         this.hasFakeBlock = false;
         this.itemDescription = 'Go back to first gear, loser';
+        localStorage.setItem('drawnItem', `Ouch${this.character}`);
         return (this.drawnItem = `Ouch${this.character}`);
       }
     }
@@ -95,19 +95,21 @@ export class ItemDrawerComponent {
       this.itemName = item.name;
       this.itemDescription = item.description;
     }
+    localStorage.setItem('drawnItem', itemName);
+    localStorage.setItem('itemDescription', this.itemDescription);
     return itemName;
   }
 
-  playSound() {
-    let audio = new Audio();
-    audio.src = `assets/audio/ouch/${this.character}Ouch.wav`;
+  playAudio(clipName: string) {
+    const audio = new Audio();
+    audio.src = `assets/audio/${this.character}${clipName}.wav`;
     audio.load();
     audio.play();
   }
 
   setPosition(position: string) {
     this.position = position;
-    this.isResettable = true;
+    localStorage.setItem('position', position);
   }
 
   toggleFakeBlock() {
